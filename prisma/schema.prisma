@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Admin {
+  id             Int    @id @default(autoincrement())
+  name           String
+  cpf            String
+  hash           String
+  api_token      String @default("")
+  remember_token String @default("")
+}
+
+model User {
+  id             Int           @id @default(autoincrement())
+  name           String
+  email          String
+  password       String
+  api_token      String        @default("")
+  remember_token String        @default("")
+  presents       UserPresent[]
+}
+
+model Present {
+  id           Int           @id @default(autoincrement())
+  urlImg       String
+  link         String        @default("")
+  price        Int           @default(0)
+  name         String
+  isSelected   Boolean       @default(false)
+  userPresents UserPresent[]
+}
+
+model UserPresent {
+  id        Int     @id @default(autoincrement())
+  userId    Int
+  presentId Int
+  present   Present @relation(fields: [presentId], references: [id])
+  user      User    @relation(fields: [userId], references: [id])
+
+  @@unique([userId, presentId])
+}

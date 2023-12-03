@@ -1,0 +1,45 @@
+{
+  "name": "enxovs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eduardo Ramos",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/main.ts",
+    "pull": "prisma db pull",
+    "generate": "prisma generate",
+    "studio": "prisma studio",
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.4",
+    "@types/jsonwebtoken": "^9.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.4",
+    "@prisma/client": "^5.3.1",
+    "@prisma/studio": "^0.494.0",
+    "@types/ip": "^1.1.1",
+    "@types/node": "20.7.1",
+    "apollo-server-core": "^3.12.1",
+    "apollo-server-express": "^3.12.1",
+    "bcryptjs": "^2.4.3",
+    "class-validator": "^0.13.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "g": "^2.0.1",
+    "graphql": "^15.3.0",
+    "ip": "^1.1.8",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.0.1",
+    "prisma": "^5.3.1",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.1.6",
+    "type-graphql": "^1.1.1",
+    "typescript": "^5.2.2"
+  }
+}
